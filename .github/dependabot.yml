@@ -1,0 +1,19 @@
+version: 2
+updates:
+  # The only non-generated content here is workflows. The casks are Ruby but
+  # there is no Gemfile or gemspec, so there is no Ruby ecosystem to track.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    commit-message:
+      prefix: "ci"
+    open-pull-requests-limit: 5
+    labels:
+      - dependencies
+      - github-actions
+    groups:
+      actions-all:
+        patterns:
+          - "*"
